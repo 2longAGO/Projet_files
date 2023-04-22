@@ -21,7 +21,7 @@ def excel_to_conf():
             if(len(df.axes[0]) > 1 and len(df.axes[1]) > 5):
                 try:
                     with open(sys.argv[2]+"\\"+tabs[i]+".conf",'x') as f:
-                        for r in range(1,len(df.axes[0])):
+                        for r in range(0,len(df.axes[0])):
                             # column 4 to 6
                             # name[=>][[N]][description]
                             buffer = str(df.iat[r,4]).lstrip() +"=>[" + (str(int(df.iat[r,5])) if df.iat[r,5] == df.iat[r,5] else "0") + "]" + str(df.iat[r,6]).lstrip() +"\n"
